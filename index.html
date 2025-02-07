@@ -58,56 +58,54 @@
 
         function mostrarTexto() {
             if (index > 0) {
-                textos[index - 1].style.opacity = "0"; // Desvanecer el texto anterior
+                textos[index - 1].style.opacity = "0"; 
             }
 
             if (index < textos.length) {
-                textos[index].style.opacity = "1"; // Mostrar el texto actual
+                textos[index].style.opacity = "1"; 
                 index++;
                 if (index < textos.length) {
-                    setTimeout(mostrarTexto, 3000); // Llamar nuevamente después de 3 segundos
+                    setTimeout(mostrarTexto, 3000); 
                 }
             }
         }
 
-        setTimeout(mostrarTexto, 13000); // Iniciar después de 1 segundo
+        setTimeout(mostrarTexto, 13000); 
 
         window.onload = function() {
             setTimeout(() => {
                 let div = document.getElementById("a");
-                div.style.opacity = "0"; // Inicia el desvanecimiento
+                div.style.opacity = "0";
                 setTimeout(() => {
-                    div.style.display = "none"; // Oculta el div después de la animación
-                }, 1500); // Espera 1.5s hasta que termine la transición
-            }, 10000); // Espera 10 segundos antes de iniciar la animación
+                    div.style.display = "none"; 
+                }, 1500); 
+            }, 10000); 
         };
 
         setTimeout(() => {
             document.getElementById("c").style.opacity = "1";
-        }, 20000); // Espera 1.5 segundos para que el último texto termine de desaparecer
+        }, 20000); 
 
         let div = document.getElementById("miDiv");
         let popout = document.getElementById("popout");
         let overlay = document.getElementById("overlay");
         let cerrarBtn = document.getElementById("cerrarBtn");
 
-        // Mostrar el popout cuando se haga clic en el div
+       
         div.addEventListener("click", function() {
-            overlay.style.display = "block"; // Muestra el fondo oscuro
-            popout.style.display = "block"; // Muestra el popout
-            setTimeout(() => popout.style.opacity = 1, 10); // Aparece con transición
+            overlay.style.display = "block"; 
+            popout.style.display = "block"; 
+            setTimeout(() => popout.style.opacity = 1, 10); 
         });
 
-        // Cerrar el popout al hacer clic en el botón de cerrar
         cerrarBtn.addEventListener("click", function() {
-            popout.style.opacity = 0; // Desaparece el popout
+            popout.style.opacity = 0;
             setTimeout(() => {
                 popout.style.display = "none";
-                overlay.style.display = "none"; // Ocultar el fondo oscuro
-            }, 300); // Espera a que termine la transición
+                overlay.style.display = "none"; 
+            }, 300); 
         });
 
-        // Cerrar el popout al hacer clic en el fondo oscuro
         overlay.addEventListener("click", function() {
             popout.style.opacity = 0;
             setTimeout(() => {
@@ -116,27 +114,26 @@
             }, 300);
         });
 
-        const totalCorazones = 150; // Número de corazones a mostrar
+        const totalCorazones = 150; 
 
-        // Función para generar corazones de manera aleatoria después de 10 segundos
         setTimeout(() => {
             for (let i = 0; i < totalCorazones; i++) {
                 let corazon = document.createElement('div');
                 corazon.classList.add('corazon');
 
-                // Asignar valores aleatorios para el movimiento horizontal y el retraso
-                corazon.style.setProperty('--random-x', Math.random());  // Movimiento aleatorio horizontal
-                corazon.style.animationDuration = `${Math.random() * 4 + 3}s`; // Duración aleatoria
+               
+                corazon.style.setProperty('--random-x', Math.random()); 
+                corazon.style.animationDuration = `${Math.random() * 4 + 3}s`; 
 
-                // Generar corazones en posiciones aleatorias
-                corazon.style.animationDelay = `${Math.random() * 3}s`; // Retraso aleatorio para que no todos caigan al mismo tiempo
+                
+                corazon.style.animationDelay = `${Math.random() * 3}s`; 
 
                 document.body.appendChild(corazon);
             }
         }, 10000);
 
         document.getElementById("miDiv2").addEventListener("click", function() {
-            window.location.href = "pags/pagina2.html"; // Aquí se coloca la ruta del otro HTML
+            window.location.href = "pags/pagina2.html"; 
         });
 
     </script>
