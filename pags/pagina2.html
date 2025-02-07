@@ -22,24 +22,21 @@
     </div>
 
     <Script>
-        const totalCorazones = 150; // Número de corazones a mostrar
+        const totalCorazones = 150; 
 
-        // Función para generar corazones de manera aleatoria después de 10 segundos
         setTimeout(() => {
             for (let i = 0; i < totalCorazones; i++) {
                 let corazon = document.createElement('div');
                 corazon.classList.add('corazon');
 
-                // Asignar valores aleatorios para el movimiento horizontal y el retraso
-                corazon.style.setProperty('--random-x', Math.random());  // Movimiento aleatorio horizontal
-                corazon.style.animationDuration = `${Math.random() * 4 + 3}s`; // Duración aleatoria
+                corazon.style.setProperty('--random-x', Math.random());  
+                corazon.style.animationDuration = `${Math.random() * 4 + 3}s`; 
 
-                // Generar corazones en posiciones aleatorias
-                corazon.style.animationDelay = `${Math.random() * 3}s`; // Retraso aleatorio para que no todos caigan al mismo tiempo
+                corazon.style.animationDelay = `${Math.random() * 3}s`; 
 
                 document.body.appendChild(corazon);
             }
-        }, 1000);
+        }, 100);
     </Script>
 </body>
 </html>
