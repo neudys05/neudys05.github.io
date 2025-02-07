@@ -1,0 +1,31 @@
+.corazon {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    clip-path: polygon(50% 0%, 100% 35%, 75% 100%, 25% 100%, 0% 35%);
+    opacity: 0;
+    animation: caer 4s infinite ease-in-out;
+}
+.grande{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+@keyframes caer {
+    0% {
+        top: -20px;
+        left: calc(100% * var(--random-x));
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        top: 100%;
+        left: calc(100% * var(--random-x));
+        opacity: 0;
+    }
+}
